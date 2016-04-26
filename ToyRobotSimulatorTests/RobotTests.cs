@@ -22,6 +22,26 @@ namespace ToyRobotSimulator.Tests
         }
 
         [TestMethod()]
+        public void LeftTest_ShouldNotTurnBeforePlaced()
+        {
+            var robot = new Robot();
+            robot.Left();
+
+            if (robot.Report() != string.Empty)
+                Assert.Fail("Robot should not turn left before its placed on a table.");
+        }
+
+        [TestMethod()]
+        public void RightTest_ShouldNotTurnBeforePlaced()
+        {
+            var robot = new Robot();
+            robot.Right();
+
+            if (robot.Report() != string.Empty)
+                Assert.Fail("Robot should not turn right before its placed on a table.");
+        }
+
+        [TestMethod()]
         public void MoveTest_MovingUp()
         {
             var robot = new Robot();
