@@ -61,6 +61,10 @@ namespace ToyRobotSimulatorUI
         private void RenderRobot()
         {
             var locStr = _robot.Report().Split(',');
+
+            if (locStr.Length != 3)//report should have 3 parts
+                return;
+
             int x = Int32.Parse(locStr[0]);
             int y = Int32.Parse(locStr[1]);
             Direction face;
