@@ -55,11 +55,17 @@ namespace ToyRobotSimulator
 
         public void Left()
         {
+            if (_isOnTable == false)//dont move if you are not placed on the table
+                return;
+
             _position.Face = Rotate(RotateTo.LEFT, 90, _position.Face);
         }
 
         public void Right()
         {
+            if (_isOnTable == false)//dont move if you are not placed on the table
+                return;
+
             _position.Face = Rotate(RotateTo.RIGHT, 90, _position.Face);
         }
 
